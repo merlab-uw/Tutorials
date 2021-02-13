@@ -11,7 +11,9 @@ Once you open the application, you'll need to specificy the path to your input a
 
 ![app_window](https://github.com/merlab-uw/Tutorials/blob/master/imgs_for_repo/pgd_app_orientation.PNG?raw=true)
 
-As an example, let's convert a VCF file to a Genepop file.
+As an example, let's convert a VCF file to a Genepop file. First, I specify the input file format (VCF) and the output file format (Genepop) from the drop down windows. I also specify the input and output paths. You can see here that I have a VCF file called ``really_fun_genotypes.vcf`` (a girl can dream) on my desktop, and I've made a path to the output file that will get written in the same location with the same name, just a different file extension (Genepop files get ``.gen`` or ``.txt`` depending on the program).
+
+![input_output](https://github.com/merlab-uw/Tutorials/blob/master/imgs_for_repo/pgd_input_output.PNG?raw=true)
 
 
 
