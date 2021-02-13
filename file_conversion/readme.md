@@ -1,11 +1,13 @@
-## File conversion
+# File conversion
+
+When embarking upon your population genetic analyses, you will quickly find that you will need to change file formats to use different programs. Changing file formats can be be really time-consuming, so we've synthesized resources for doing so quickly and reproducibly! Here, we'll cover PGD Spider, the R package ``radiator``, and some custom scripts our lab has put together.
 
 
-#### PGD Spider
+## [1] PGD Spider
 
 ![logo](https://github.com/merlab-uw/Tutorials/blob/master/imgs_for_repo/pgd_spider_logo.PNG?raw=true)
 
-[PGD Spider](http://www.cmpg.unibe.ch/software/PGDSpider/) is a program for converting among filetypes, to help you work across programs in population genetics. It has both a GUI version and a command line version. First, we'll walk through the GUI version.
+[PGD Spider](http://www.cmpg.unibe.ch/software/PGDSpider/) is a Java program for converting among filetypes, to help you work across programs in population genetics. It has both a GUI version and a command line version. First, we'll walk through the GUI version.
 
 Once you open the application, you'll need to specificy the path to your input and output files, as well as the file formats for each (e.g., VCF, genepop, structure, etc.). You'll also need to specificy a bunch of options, which you can save in a SPID file. Here's what the application window looks like.
 
@@ -25,7 +27,9 @@ Then you're ready to convert! Click ``Save and Apply`` if you want to save this 
 
 Simple enough, right? There are some few other things to note, like not all file formats can be converted to all file formats. You can read more in the original documentation [here](http://www.cmpg.unibe.ch/software/PGDSpider/).
 
-Now, check out [this notebook](https://github.com/merlab-uw/Tutorials/blob/master/file_conversion/using_PGDSpider_at_commandline.ipynb) to see how to use PGD Spider at the command line! This is extra handy if you'd like to use PGD Spider to convert file formats within a pipeline. Here's what the call looks like
+Now, check out [this notebook](https://github.com/merlab-uw/Tutorials/blob/master/file_conversion/using_PGDSpider_at_commandline.ipynb) to see how to use PGD Spider at the command line! This is extra handy if you'd like to use PGD Spider to convert file formats within a pipeline. Here's what the call looks like this.
+
+![cl](https://github.com/merlab-uw/Tutorials/blob/master/imgs_for_repo/pgd_command_line.PNG?raw=true)
 
 #### ``radiator`` in R
 
