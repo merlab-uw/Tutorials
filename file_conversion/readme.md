@@ -15,6 +15,12 @@ As an example, let's convert a VCF file to a Genepop file. First, I specify the 
 
 ![input_output](https://github.com/merlab-uw/Tutorials/blob/master/imgs_for_repo/pgd_input_output.PNG?raw=true)
 
+Now it's time to pick some conversion options, which get stored in a SPID file. You'll get prompted to edit the SPID file if you try to click ``Convert`` before specifying the options.  If you don't already have a SPID file with the desired options specificed, you can click ``Create /Edit SPID`` and specify those options manually. Otherwise, you can read in an existing SPID file.  Using saved SPID files is handy if you always convert files the same way, or want to be sure you're being consistent in how you convert files. Here's what the app looks like when you're creating or editing a SPID file, and note that there's a tab for parsing the input format and writing the output format. These options differ based on format.
+
+!options[o]
+
+
+
 
 
 
