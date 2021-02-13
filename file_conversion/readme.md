@@ -1,6 +1,6 @@
 # File conversion
 
-When embarking upon your population genetic analyses, you will quickly find that you will need to change file formats to use different programs. Changing file formats can be be really time-consuming, so we've synthesized resources for doing so quickly and reproducibly! Here, we'll cover PGD Spider, the R package ``radiator``, and some custom scripts our lab has put together.
+When embarking upon your population genetic analyses, you will quickly find that changing file formats is a big part of the work. Changing file formats can be be really time-consuming, esecially when first getting started on your analyses. To help, we've synthesized resources for doing so quickly and reproducibly! Here, we'll cover PGD Spider, the R package ``radiator``, and some custom scripts our lab has put together.
 
 
 ## [1] PGD Spider
