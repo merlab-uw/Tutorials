@@ -19,14 +19,15 @@ Now it's time to pick some conversion options, which get stored in a SPID file. 
 
 ![options](https://github.com/merlab-uw/Tutorials/blob/master/imgs_for_repo/pgd_vcf_options.PNG?raw=true)
 
+Then you're ready to convert! Click ``Save and Apply`` if you want to save this SPID file for future use, or to remember what options you chose. Otherwise, click ``Apply``. Here's what my log window looked like after running.
+
+![log](https://github.com/merlab-uw/Tutorials/blob/master/imgs_for_repo/pgd_log.PNG?raw=true)
+
+Simple enough, right? There are some few other things to note, like not all file formats can be converted to all file formats. You can read more in the original documentation [here](http://www.cmpg.unibe.ch/software/PGDSpider/).
+
+Now let's try the command line version! This is extra handy if you'd like to use PGD Spider to convert file formats within a pipeline.
 
 
-
-
-
-
-
-(The command line version is used liked this)
 
 
 #### ``radiator`` in R
