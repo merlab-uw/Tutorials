@@ -25,10 +25,7 @@ Then you're ready to convert! Click ``Save and Apply`` if you want to save this 
 
 Simple enough, right? There are some few other things to note, like not all file formats can be converted to all file formats. You can read more in the original documentation [here](http://www.cmpg.unibe.ch/software/PGDSpider/).
 
-Now let's try the command line version! This is extra handy if you'd like to use PGD Spider to convert file formats within a pipeline.
-
-
-
+Now, check out [this notebook](https://github.com/merlab-uw/Tutorials/blob/master/file_conversion/using_PGDSpider_at_commandline.ipynb) to see how to use PGD Spider at the command line! This is extra handy if you'd like to use PGD Spider to convert file formats within a pipeline. Here's what the call looks like
 
 #### ``radiator`` in R
 
