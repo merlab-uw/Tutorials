@@ -31,10 +31,61 @@ Now, check out [this notebook](https://github.com/merlab-uw/Tutorials/blob/maste
 
 ![cl](https://github.com/merlab-uw/Tutorials/blob/master/imgs_for_repo/pgd_command_line.PNG?raw=true)
 
-#### ``radiator`` in R
 
 
-#### Custom scripts
+## [2] Radiator 
+
+
+[Radiator](https://thierrygosselin.github.io/radiator/index.html) is an R package that is "designed and optimized for fast computations of diploid data using Genomic Data Structure (GDS) file format and data science packages in the (mighty) [tidyverse](https://www.tidyverse.org/). Radiator handles VCF files with millions of SNPs and files of several GB." It also has a nifty command called  ``` genomic_converter ``` that can be used to convert files into formats (e.g., plink, vcf, stacks haplotype file, genepop, genind, genlight, etc.) used by different analytical programs.
+
+To install Radiator, [follow the instructions provided on the program's GitHub page](https://thierrygosselin.github.io/radiator/index.html)
+
+Let's walk through the R script for a file conversion together. In this example, we will convert a small [vcf file containing genotypes](herring.vcf) into a *genlight* file format using radiator. To do this, we will also need a [tab-delimited text file](herring_strata.tsv) that has two columns: INDIVIDUALS and STRATA. The INDIVIDUALS column contains individual sample names, while the STRATA column designates the population (or whatever hierarchical grouping) of origin for each individual sample.  
+
+Here is the example R script:
+
+``` r
+
+# Load the necessary libraries
+library(radiator)
+library(SeqVarTools)
+library(rlang)
+
+# I am going to specify the working directory where I have saved the vcf file ("herring.vcf")
+# and the strata file ("herring_strata.tsv") that are our input data.
+
+DIR <- "C:/Users/Eleni/Documents/radiator"
+
+setwd(DIR)
+
+
+# I am going to specify the name of my vcf and strata files:
+my_vcf <- "herring.vcf"
+my_strata <- "herring_strata.tsv" 
+
+
+# Let's verify that our vcf file is detected by radiator as the correct format:
+radiator::detect_genomic_format(data = "herring.vcf")
+
+
+# Lets convert the data into "genlight" format (used by R package adegenet) using radiator's genomic_converter function
+
+herring_data <- genomic_converter(
+  data = my_vcf, 
+  strata = my_strata,
+  output = c("genlight"))
+
+
+#Get the content of the herring_data object created using:
+names(herring_data)
+
+#To isolate and work with the genlight object:
+genlight <- herring_data$genlight
+
+```
+
+
+## [3] Custom scripts
 
 There are a couple of situations in which you might need to use a custom script to achieve your file conversion goals. 
 
@@ -148,3 +199,4 @@ for i in range(1,30): #change this to the # of whitelists/blacklists you have
 		f2.close()
     
     ```
+
