@@ -39,7 +39,9 @@ Now, check out [this notebook](https://github.com/merlab-uw/Tutorials/blob/maste
 
 To install Radiator, [follow the instructions provided on the program's GitHub page](https://thierrygosselin.github.io/radiator/index.html)
 
-Let's walk through the R script for a file conversion together. In this example, we will convert a small vcf file containing genotypes ("herring.vcf") into a *genepop* file using radiator.. To do this, we will also need a tab-delimited text file ("herring_strata.tsv") that has two columns: INDIVIDUALS and STRATA. The INDIVIDUALS column contains individual sample names, while the STRATA column designates a population (or whatever hierarchical grouping you are interested) for each individual sample.  Here is how we would do it:
+Let's walk through the R script for a file conversion together. In this example, we will convert a small [vcf file containing genotypes](herring.vcf) into a *genlight* file format using radiator. To do this, we will also need a [tab-delimited text file](herring_strata.tsv) that has two columns: INDIVIDUALS and STRATA. The INDIVIDUALS column contains individual sample names, while the STRATA column designates the population (or whatever hierarchical grouping) of origin for each individual sample.  
+
+Here is the example R script:
 
 ``` r
 
