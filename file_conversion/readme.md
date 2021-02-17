@@ -42,15 +42,42 @@ To install Radiator, [follow the instructions provided on the program's GitHub p
 Let's walk through the R script for a file conversion together. In this example, we will convert a small vcf file containing genotypes ("herring.vcf") into a *genepop* file using radiator.. To do this, we will also need a tab-delimited text file ("herring_strata.tsv") that has two columns: INDIVIDUALS and STRATA. The INDIVIDUALS column contains individual sample names, while the STRATA column designates a population (or whatever hierarchical grouping you are interested) for each individual sample.  Here is how we would do it:
 
 ``` r
-# Load the radiator library
+
+# Load the necessary libraries
 library(radiator)
+library(SeqVarTools)
+library(rlang)
 
-# Specify the working directory where your files are
+# I am going to specify the working directory where I have saved the vcf file ("herring.vcf")
+# and the strata file ("herring_strata.tsv") that are our input data.
+
+DIR <- "C:/Users/Eleni/Documents/radiator"
+
+setwd(DIR)
 
 
+# I am going to specify the name of my vcf and strata files:
+my_vcf <- "herring.vcf"
+my_strata <- "herring_strata.tsv" 
 
 
+# Let's verify that our vcf file is detected by radiator as the correct format:
+radiator::detect_genomic_format(data = "herring.vcf")
 
+
+# Lets convert the data into "genlight" format (used by R package adegenet) using radiator's genomic_converter function
+
+herring_data <- genomic_converter(
+  data = my_vcf, 
+  strata = my_strata,
+  output = c("genlight"))
+
+
+#Get the content of the herring_data object created using:
+names(herring_data)
+
+#To isolate and work with the genlight object:
+genlight <- herring_data$genlight
 
 ```
 
