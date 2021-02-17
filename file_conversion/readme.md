@@ -35,9 +35,11 @@ Now, check out [this notebook](https://github.com/merlab-uw/Tutorials/blob/maste
 
 ## [2] Radiator 
 
-[Radiator](https://thierrygosselin.github.io/radiator/index.html) is an R package that is "designed and optimized for fast computations of diploid data using Genomic Data Structure (GDS) file format and data science packages in the [tidyverse](https://www.tidyverse.org/) R Package. Radiator handles VCF files with millions of SNPs and files of several GB." It also has a nifty command called  ``` genomic_converter ``` that can be used to convert files into formats (e.g., plink, vcf, genepop, genind, genlight, etc.) used by different analytical programs.
+[Radiator](https://thierrygosselin.github.io/radiator/index.html) is an R package that is "designed and optimized for fast computations of diploid data using Genomic Data Structure (GDS) file format and data science packages in the (mighty) [tidyverse](https://www.tidyverse.org/). Radiator handles VCF files with millions of SNPs and files of several GB." It also has a nifty command called  ``` genomic_converter ``` that can be used to convert files into formats (e.g., plink, vcf, genepop, genind, genlight, etc.) used by different analytical programs.
 
 To install Radiator, [follow the instructions provided on the program's GitHub page](https://thierrygosselin.github.io/radiator/index.html)
+
+Let's walk through the R script for a file conversion together. In this example, we will convert a small vcf file ("herring.vcf") and its associated sample metadata ("herring_strata.tsv") into a genepop file using radiator. Here is how we would do it:
 
 
 
