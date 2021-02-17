@@ -36,4 +36,115 @@ Now, check out [this notebook](https://github.com/merlab-uw/Tutorials/blob/maste
 
 #### Custom scripts
 
-Carolyn is testing!
+There are a couple of situations in which you might need to use a custom script to achieve your file conversion goals. 
+
+It might be that the file format you have is very close to what is required by one of the major file conversion programs like PGD Spider, but needs a couple of 'tweaks' before the program will accept it. For instance, genepop outputs a file with a list of the loci (one locus per line) at the beginning of the file, but most programs require the genepop format to be completely tabular, with these loci in one row, like the header or column names for the data. 
+
+Or because of your bioinformatics pipeline, you end up with several files, all of the same type, that need to be combined into one larger file for downstream analysis. You can do this fairly easily in R, but you might also want to quickly combine them with a custom script before using a file conversion program to change the file to another format for further analysis. 
+
+We have had success writing custom scripts to acheive goals such as these in python, but there are other ways to do it too, and anything that gets the job done in the time frame you want is a good way to do it. 
+
+Here is an example of a custom script that combines VCF files. These have to have the same loci in the same order: 
+
+```
+#This is a script to combine VCF files, it appends a VCF to the end of an existing VCF, both VCFs must have the same loci in the same order. 
+#this runs with: python name_of_the_script.py vcf_file1_name.vcf vcf_file2_name.vcf
+
+import io
+import re
+import sys
+
+#f1 = sys.argv[1] File to be appended to
+#f2 = sys.argv[2] File being appended to the first 
+
+f1 = open(sys.argv[1], 'a')
+with io.open(sys.argv[2], 'r') as f2:
+	for line in f2:
+		if '#CHROM' in line:
+			continue #if line contains('#CHROM') skip it, this is the header
+		else: 
+			f1.write(line)
+f1.close()
+f2.close()
+
+```
+To test that you have the number of lines you would expect in your new vcf file, you could use this script that counts the number of lines: 
+
+```
+#This is a script to check the combined length of any file, especilly handy for files too large to open in text editors. 
+#this runs with with: python name_of_the_script.py file_to_count_lines_of.txt
+
+import io
+import re
+import sys
+
+i = 0
+with open(sys.argv[1]) as f:
+	for i, l in enumerate(f):
+		pass
+	i + 1
+
+print i
+
+```
+
+Here is an example of a custom script that takes a file in the genepop format that has each locus name on its own line, and reformats it so that all the locus names are tab separated on one line and re-formats the file it to be easily opened in R. 
+
+```
+#This is a script to take one genepop file that does not have one locus per line, and edit the formatting so that it can be imported to R as a table. 
+#this runs with with: python name_of_the_script.py genepop_file_to_reformat.genepop genepop_output_name.txt
+
+import io
+import re
+import sys
+
+
+#f2 = sys.argv[2] Output file
+#f1 = sys.argv[1] Genepop file to edit
+f2 = open(sys.argv[2], "w+")
+with io.open(sys.argv[1], 'r') as f1:
+	for line in f1:
+		if 'Stacks' in line:
+			continue #if line contains('Stacks') skip it
+		if re.match(r'pop', line): #if the line contains pop, skip it
+			continue
+		if re.match(r'P', line): #if the line contains a sample, 
+			f2.write(line) #write it to the output file unchanged
+		else: 
+			f2.write("\t" + re.sub(r',', "\t", line))
+		#if it is the second line, (no pops or population name or stacks) write a tab, then split the remainder by replacing the , with tabs
+	f1.close()
+	f2.close()
+  
+  ```
+
+
+This is a script that edits all the genepop formatted output files that have written by Stacks, and formats them so you can easily open them in R for filtering and downstream analysis. This is useful if you have split your analysis up in Stack using the option "whitelist" or "blacklist". The file names should all follow the same naming scheme. This script was inspired by one Garrett McKinney wrote in Perl to accomplish a similar thing. 
+
+```
+#This is a script to take the genepop files that are made with iterative runs of populations and edit them so they are formatted for R
+#the files are not combined, they are individually edited, you will still have the same number you started with. 
+
+import io
+import re
+
+for i in range(1,30): #change this to the # of whitelists/blacklists you have
+
+	#this opens your output file and it creates the file if it doesnt exist
+	f2 = open("whitelist_" + str(i) + ".genepop", "w+")
+  
+	with io.open(r'whitelist_' + str(i) + r'\batch_4.genepop', 'r') as f1: #change the name of the file to suit your needs
+		for line in f1:
+			if 'Stacks' in line: #if line contains('Stacks') skip it
+				continue 
+			if re.match(r'pop', line): #if the line contains pop, skip it
+				continue
+			if re.match(r'P', line): #if the line contains a sample, #change this to match your sample names
+				f2.write(line) #write it to the output file unchanged
+			else: 
+				f2.write("\t" + re.sub(r',', "\t", line))
+			#if it is the second line, (no pops or population name or stacks) write a tab, then split the remainder by replacing the comma with tabs
+		f1.close()
+		f2.close()
+    
+    ```
