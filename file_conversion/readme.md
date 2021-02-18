@@ -65,7 +65,7 @@ my_strata <- "herring_strata.tsv"
 
 
 # Let's verify that our vcf file is detected by radiator as the correct format:
-radiator::detect_genomic_format(data = "herring.vcf")
+radiator::detect_genomic_format(data = my_vcf)
 
 
 # Lets convert the data into "genlight" format (used by R package adegenet) using radiator's genomic_converter function
