@@ -1,4 +1,4 @@
-Repository of useful tutorials for useful bioinformatic and computational skills.
+# This is a repository of useful tutorials for useful bioinformatic and computational skills.
 
 Additionally, see these helpful style codes as you get to writing your own functions and scripts. It will help with collaborating with others!
 
