@@ -20,3 +20,5 @@ Additionally, see these helpful style codes as you get to writing your own funct
 4. Markdown cheat sheet - [https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/)
 
 5. Good enough scientific computing - [https://swcarpentry.github.io/good-enough-practices-in-scientific-computing/](https://swcarpentry.github.io/good-enough-practices-in-scientific-computing/)
+
+6. Evolutionary Genetics: Concepts, Analysis & Practice - Online book and ten tutorials are introductions to key concepts in evolutionary genetics designed to introduce the R programming language [Evolutionary Genetics: Concepts, Analysis & Practice](https://evolutionarygenetics.github.io/)
