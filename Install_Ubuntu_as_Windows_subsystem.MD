@@ -5,8 +5,7 @@ I have a Windows 10 computer but most of the data file manipulation and pop gen 
 The Windows Subsystem Linux is not appropriate for everything. There are some Unix based graphical programs that don't work with it, and there might be issues with some other Unix programs failing to install or run properly. But I thought it was worth trying out because of the benefit of avoiding a virtual machine.
 
 ## **Installing Windows Subsystem for Linux: Ubuntu on Windows 10**
-I followed this website to install the subsytem:
-https://docs.microsoft.com/en-us/windows/wsl/install-win10
+I followed this [website](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install the subsytem
 
 Before installing any Linux distros (short for distribution) for Windows, you must ensure that the "Windows Subsystem for Linux" optional feature is enabled. Open Windows PowerShell as Administrator. You can do this by typing PowerShell into the search bar on the task bar search field near the Windows button on the bottom of the screen, and right clicking on the program PowerShell when it appears. The menu that pops up should give the option to run as an administrator.
 
@@ -20,7 +19,7 @@ Restart your computer when prompted.
 
 If you follow the website I listed in the previous section, it has  several options for how to install your Linux distro of choice, but I downloaded Ubuntu v18.04 from the Microsoft store. You can find the Microsoft store if you search for the Microsoft store in your task bar search field.  Otherwise, here is the link to the Microsoft store distribution for [Ubuntu 18.04 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q). From the store page, click on the button "Get".
 
-The distro will download automatically. When it has finished downloading, you must initialize a new instance before you can use the terminal. Here are the website [instructions] (https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) for how to do that or follow along below.
+The distro will download automatically. When it has finished downloading, you must initialize a new instance before you can use the terminal. Here are the website [instructions](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) for how to do that or follow along below.
 
 To complete the initialization, launch a new instance of the Ubuntu terminal. You can do this by clicking the "launch" button in the Microsoft Store page, or launching the distribution from the Start menu by searching for it on the bottom task bar of the desktop.
 
@@ -77,7 +76,8 @@ I have the Ubuntu terminal icon pinned to my task bar to make it really easy to 
 To navigate to directories on a hard drive of the computer, you have to navigate to */mnt/* first, that is where all the hard drives are "mounted". Here use the *cd* command to get to the *mnt* directory, and then I see what my options are for hard drives:
 
 ```cd /mnt
-ls```
+ls
+```
 
 This is how that looks in the terminal. The letters are the options that I have for hard drives:
 
