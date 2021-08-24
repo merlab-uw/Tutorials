@@ -27,7 +27,7 @@ The first time a newly installed distribution runs, a terminal window will open 
 
 This is what that request will look like:
 
-![](../imgs_for_repo/04d681f2da94ec16afe50a8a83f4e5a1.png)
+![](./imgs_for_repo/04d681f2da94ec16afe50a8a83f4e5a1.png)
 
 This user account is for the normal non-admin user that you'll be logged-in as by default when launching the Ubuntu terminal on your desktop. You can choose any username and password, they have no bearing on your Windows username. Do not include any spaces in the name.
 
@@ -71,7 +71,7 @@ The windows subsystem Ubuntu acts as if the hard drives of your computer were mo
 
 I have the Ubuntu terminal icon pinned to my task bar to make it really easy to run Ubuntu terminal instances. When I open a new instance it looks like this, completely blank with just my user name and the name of the computer:
 
-![](../imgs_for_repo/4d40f262bd50a0bff516a5abc87eaf5e.png)
+![](./imgs_for_repo/4d40f262bd50a0bff516a5abc87eaf5e.png)
 
 To navigate to directories on a hard drive of the computer, you have to navigate to */mnt/* first, that is where all the hard drives are "mounted". Here use the *cd* command to get to the *mnt* directory, and then I see what my options are for hard drives:
 
@@ -81,7 +81,7 @@ ls
 
 This is how that looks in the terminal. The letters are the options that I have for hard drives:
 
- ![](../imgs_for_repo/d418bf1802f7dc0359cb9c00337e6164.png)
+ ![](./imgs_for_repo/d418bf1802f7dc0359cb9c00337e6164.png)
 
 If you aren't sure which letter corresponds to which hard drive, look in Windows File Explorer, or you can just try them out one at a time.
 
@@ -90,7 +90,7 @@ cd <hard_drive_letter_choice>
 ls
 ```
 
-![](../imgs_for_repo/5207e8f002f01a6b7e8ecd12ebb56c76.png)
+![](./imgs_for_repo/5207e8f002f01a6b7e8ecd12ebb56c76.png)
 
 Besides navigating through the */mnt/* directory to access your hard drives, the rest of the experience is typical of an Ubuntu/Unix environment.
 
