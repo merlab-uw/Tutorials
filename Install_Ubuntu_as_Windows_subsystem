@@ -28,82 +28,76 @@ The first time a newly installed distribution runs, a terminal window will open 
 
 This is what that request will look like:
 
-![](../_resources/04d681f2da94ec16afe50a8a83f4e5a1.png)
+![](../imgs_for_repo/04d681f2da94ec16afe50a8a83f4e5a1.png)
 
-This user account is for the normal non-admin user that you'll be logged-in as by default when launching the Ubuntu terminal on your desktop. You can choose any username and password you wish, they have no bearing on your Windows username. Be sure to not include any spaces in the name.
+This user account is for the normal non-admin user that you'll be logged-in as by default when launching the Ubuntu terminal on your desktop. You can choose any username and password, they have no bearing on your Windows username. Do not include any spaces in the name.
 
-When you open a new Ubuntu terminal instance, you won't be prompted for your password, but **if you elevate a process using**** ****sudo****, you will need to enter your password**, so make sure you choose a password you can easily remember!
+When you open a new Ubuntu terminal instance, you won't be prompted for your password, but **if you elevate a process using *sudo*, you will need to enter your password**, so make sure you choose a password you can easily remember!
 
-**Installing Unix programs on Windows 10 with the Ubuntu terminal**
+## **Installing Unix programs on Windows 10 with the Ubuntu terminal**
 
-From website:  https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/
+From this [website](https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/)
 
-The easiest way to install Linux software in your Ubuntu environment is with the apt-get command. (The apt command also works.) This command downloads and installs software from Ubuntu’s software repositories. You can download and install one or more applications with just a single command. As this is a more-or-less full Ubuntu userspace environment, you can also install software in other ways. You can compile and install software from the source code just as you would on a Linux distribution, for example.
+The easiest way to install Linux software in your Ubuntu environment is with the *apt-get* or *apt* command. This command downloads and installs software from Ubuntu’s software repositories. You can also compile and install software from the source code just as you would on any Linux distribution.
 
-From website:  https://www.howtogeek.com/261449/how-to-install-linux-software-in-windows-10s-ubuntu-bash-shell/
+From [website](https://www.howtogeek.com/261449/how-to-install-linux-software-in-windows-10s-ubuntu-bash-shell/)
 
-Install Windows 10’s Ubuntu-based Bash shell and you’ll have a complete Ubuntu environment that lets you install and run the same applications you could run on an Ubuntu-based Linux system. Just like on Ubuntu, though, you’ll need the apt-get command to install and update software. Note that Windows 10’s Linux subsystem doesn’t officially support graphical applications or server software (though it is possible to run some graphical applications, unofficially). Officially, it’s intended for Linux terminal applications and other command-line utilities developers might want. Windows 10’s Bash shell only supports 64-bit binaries, so you can’t install and run 32-bit Linux programs.
+*Install Windows 10’s Ubuntu-based Bash shell and you’ll have a complete Ubuntu environment that lets you install and run the same applications you could run on an Ubuntu-based Linux system. Just like on Ubuntu, though, you’ll need the apt-get command to install and update software. Note that Windows 10’s Linux subsystem doesn’t officially support graphical applications or server software (though it is possible to run some graphical applications, unofficially). Officially, it’s intended for Linux terminal applications and other command-line utilities developers might want. Windows 10’s Bash shell only supports 64-bit binaries, so you can’t install and run 32-bit Linux programs.*
 
 First, you’ll want to run the following command to download up-to-date package lists from the software repositories.  Do this before you try to install any package:
 
-sudo apt-get update
+```sudo apt-get update```
 
 Then install the programs that you are interested in using this command. Fill in the <> with the name of your program:
 
-sudo apt-get install <the_program_you_want>
+```sudo apt-get install <the_program_you_want>```
 
 For instance, I installed vcftools, samtools, and bowtie2, stacks, bwa, python and verified that perl was installed using the above command. If the output to the terminal tells you that you need to install something, or that some package is required, I would recommend just installing it.
 
 If you are not sure what packages are available, or want to browse available packages using a search word, use the following command:
 
-sudo apt-cache search <your_search_word_here>
+```sudo apt-cache search <your_search_word_here>```
 
 I searched "pop" and "population" and got a fair number of results. Stacks was one of them, along with vcftools.
 
 The following command will update the Ubuntu package catalog and upgrade any installed packages.  It should be done regularly to keep packages up to date:
 
-sudo apt update && sudo apt-get dist-upgrade
+```sudo apt update && sudo apt-get dist-upgrade```
 
-apt-get dist-upgrade will do the same job which is done by apt-get upgrade, plus it will also intelligently handle the dependencies, so it might remove obsolete packages or add new ones.  https://askubuntu.com/questions/222348/what-does-sudo-apt-get-update-do
+*apt-get dist-upgrade* will do the same thing as *apt-get upgrade*, plus it will also intelligently handle the dependencies so it might remove obsolete packages or add new ones.  From [website](https://askubuntu.com/questions/222348/what-does-sudo-apt-get-update-do)
 
-**Navigating to your files with the Ubuntu terminal**
+## **Navigating to your files with the Ubuntu terminal**
 
-The windows subsystem Ubuntu acts as if the hard drives of your computer were mounted like external hard drives, or similar to the way your desktop drives are mounted to a Virtual Machine. To access your hard drive folders you have to navigate to them a little bit thoughtfully.
+The windows subsystem Ubuntu acts as if the hard drives of your computer were mounted like external hard drives (similar to the way your desktop drives are mounted to a virtual machine). To access your hard drive folders you have to navigate to them thoughtfully.
 
-I have the Ubuntu terminal icon pinned to my task bar to make it really easy to run Ubuntu terminal instances. When I open a new instance it looks like this, completely blank with just my user name and the name of the computer (kg for Kristen Gruenthal, I assume):
+I have the Ubuntu terminal icon pinned to my task bar to make it really easy to run Ubuntu terminal instances. When I open a new instance it looks like this, completely blank with just my user name and the name of the computer:
 
-![](../_resources/4d40f262bd50a0bff516a5abc87eaf5e.png)
+![](../imgs_for_repo/4d40f262bd50a0bff516a5abc87eaf5e.png)
 
-To navigate to folders on any hard drive of the computer, you have to go to the mnt/ directory first, that is where all the hard drives are "mounted". I use the cd command to get to the mnt directory, and then ls see what my options are for hard drives:
+To navigate to directories on a hard drive of the computer, you have to navigate to */mnt/* first, that is where all the hard drives are "mounted". Here use the *cd* command to get to the *mnt* directory, and then I see what my options are for hard drives:
 
-cd /mnt
-ls
+```cd /mnt
+ls```
 
 This is how that looks in the terminal. The letters are the options that I have for hard drives:
 
- ![](../_resources/d418bf1802f7dc0359cb9c00337e6164.png)
+ ![](../imgs_for_repo/d418bf1802f7dc0359cb9c00337e6164.png)
 
-If you aren't sure which letter corresponds to which hard drive, you can check a windows File Explorer, or you can just try them out one at a time to get a good sense of the structure.
+If you aren't sure which letter corresponds to which hard drive, look in Windows File Explorer, or you can just try them out one at a time.
 
+```
 cd <hard_drive_letter_choice>
 ls
+```
 
-![](../_resources/5207e8f002f01a6b7e8ecd12ebb56c76.png)
+![](../imgs_for_repo/5207e8f002f01a6b7e8ecd12ebb56c76.png)
 
-Other than the trick of going through the /mnt directory to access your hard drives, the rest of the experience is typical of an Ubuntu/Unix environment.
+Besides navigating through the */mnt/* directory to access your hard drives, the rest of the experience is typical of an Ubuntu/Unix environment.
 
-**OTHER INFORMATION**
-**
-**
-Here are some of the websites I found useful:
-
-https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/
-
-https://dev.to/david_j_eddy/run-linux-gui-applications-on-windows-10-3130
-
-https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/
-
-https://blogs.msdn.microsoft.com/wsl/2016/04/22/windows-subsystem-for-linux-overview/
-
-https://docs.microsoft.com/en-us/windows/wsl/initialize-distro
-https://docs.microsoft.com/en-us/windows/wsl/faq
+**Here are some of the websites I found useful:**
+-https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/
+-https://dev.to/david_j_eddy/run-linux-gui-applications-on-windows-10-3130
+-https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/
+-https://blogs.msdn.microsoft.com/wsl/2016/04/22/windows-subsystem-for-linux-overview/
+-https://docs.microsoft.com/en-us/windows/wsl/initialize-distro
+-https://docs.microsoft.com/en-us/windows/wsl/faq
